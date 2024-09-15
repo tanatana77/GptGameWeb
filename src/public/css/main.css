@@ -1,0 +1,108 @@
+/* 画面全体 */
+html, body {
+    height: 100%;
+    background-color: black;
+    font: 18px 'Hachi Maru Pop', serif;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+.outerframe {
+height: 100%;
+position: relative;
+}
+
+.outerframe main {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.main {
+    background-image: url("../images/backgounrd.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+    text-align: center;
+}
+
+/* キャラ画像 */
+.containerCharaImg {
+    height: 100%;
+}
+
+.containerCharaImg .charaImg {
+    height: 100%;
+}
+
+/* テキストボックス（入力欄・送信ボタン） */
+.containerTextareaWrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+}
+
+/* 入力欄 */
+.containerTextareaWrapper .containerTextarea .textarea .Child {
+    width: 70%;
+    height: 150px;
+    resize: none;
+    overflow-y: hidden;
+    font-size: 20px;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* 送信ボタン */
+.sendBtn {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(45deg, #38b000, #70e000);
+    color: white;
+    border: none;
+    padding: 0px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    cursor:not-allowed;
+}
+
+.sendBtn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    transform: rotate(45deg);
+}
+
+.sendBtn:hover:before {
+    left: 100%;
+}
+
+.sendBtn:hover {
+    background: linear-gradient(45deg, #4cc900, #89f000);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sendBtn:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
