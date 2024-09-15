@@ -1,0 +1,16 @@
+CREATE PROCEDURE `SELECT_T_RESPONSE_LATEST`(
+    IN I_SESSION_ID CHAR(36)
+)
+BEGIN
+    SELECT MESSAGE,
+           JOY,
+           LOVE,
+           SAD,
+           ANGER
+    FROM T_RESPONSE 
+    WHERE SESSION_ID = I_SESSION_ID
+      AND ERROR_FLG = 0
+      AND ROLE = 'assistant'
+    ORDER BY RESPONSE_ID DESC
+    LIMIT 1;
+END
